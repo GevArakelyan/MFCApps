@@ -54,6 +54,7 @@ END_MESSAGE_MAP()
 
 CMFCAppsDlg::CMFCAppsDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_MFCAPPS_DIALOG, pParent)
+	, m_FinishText(_T(""))
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -61,12 +62,17 @@ CMFCAppsDlg::CMFCAppsDlg(CWnd* pParent /*=nullptr*/)
 void CMFCAppsDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_PROGRESS1, m_ProgressCtrl);
+	DDX_Text(pDX, IDC_EDIT1, m_FinishText);
 }
 
 BEGIN_MESSAGE_MAP(CMFCAppsDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_WM_TIMER()
+	ON_BN_CLICKED(IDOK2, &CMFCAppsDlg::OnBnClickedOk2)
+	ON_BN_CLICKED(IDCANCEL2, &CMFCAppsDlg::OnBnClickedCancel2)
 END_MESSAGE_MAP()
 
 
@@ -106,6 +112,8 @@ BOOL CMFCAppsDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
+	
+	m_ProgressCtrl.SetRange(0, 100);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
@@ -159,3 +167,27 @@ HCURSOR CMFCAppsDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+
+void CMFCAppsDlg::OnTimer(UINT_PTR nIDEvent)
+{
+	m_ProgressCtrl.OffsetPos(20);
+	if (m_ProgressCtrl.GetPos() == 100)
+	{
+		m_FinishText = "Done";
+		UpdateData(FALSE);
+	}
+	CDialogEx::OnTimer(nIDEvent);
+}
+
+void CMFCAppsDlg::OnBnClickedOk2()
+{
+	SetTimer(1, 1000, NULL);
+}
+
+
+void CMFCAppsDlg::OnBnClickedCancel2()
+{
+	KillTimer(1);
+}
