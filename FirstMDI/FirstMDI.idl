@@ -1,0 +1,29 @@
+// FirstMDI.idl : type library source for FirstMDI.exe
+
+// This file will be processed by the MIDL compiler to produce the
+// type library (FirstMDI.tlb).
+
+[ uuid(a8744e1f-3039-44d3-9b5c-1e1bac795917), version(1.0) ]
+library FirstMDI
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//  Primary dispatch interface for CFirstMDIDoc
+
+	[ uuid(5467b77a-6cf6-494e-8ce7-1806f39a5acf) ]
+	dispinterface IFirstMDI
+	{
+		properties:
+
+		methods:
+	};
+
+	//  Class information for CFirstMDIDoc
+
+	[ uuid(5a458f6b-f475-4bd3-a353-4f1657107e8e) ]
+	coclass CFirstMDIDoc
+	{
+		[default] dispinterface IFirstMDI;
+	};
+};
