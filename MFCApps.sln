@@ -18,6 +18,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FirstMDI", "FirstMDI\FirstM
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CtrlsDemo", "CtrlsDemo\CtrlsDemo.vcxproj", "{3B2768BE-51B1-435A-B222-83631E2B0F27}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinVersionFinder", "WinVersionFinder\WinVersionFinder.vcxproj", "{A95852BC-41A7-4E9B-AC63-0CE5E7292132}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -66,6 +68,14 @@ Global
 		{3B2768BE-51B1-435A-B222-83631E2B0F27}.Release|x64.Build.0 = Release|x64
 		{3B2768BE-51B1-435A-B222-83631E2B0F27}.Release|x86.ActiveCfg = Release|Win32
 		{3B2768BE-51B1-435A-B222-83631E2B0F27}.Release|x86.Build.0 = Release|Win32
+		{A95852BC-41A7-4E9B-AC63-0CE5E7292132}.Debug|x64.ActiveCfg = Debug|x64
+		{A95852BC-41A7-4E9B-AC63-0CE5E7292132}.Debug|x64.Build.0 = Debug|x64
+		{A95852BC-41A7-4E9B-AC63-0CE5E7292132}.Debug|x86.ActiveCfg = Debug|Win32
+		{A95852BC-41A7-4E9B-AC63-0CE5E7292132}.Debug|x86.Build.0 = Debug|Win32
+		{A95852BC-41A7-4E9B-AC63-0CE5E7292132}.Release|x64.ActiveCfg = Release|x64
+		{A95852BC-41A7-4E9B-AC63-0CE5E7292132}.Release|x64.Build.0 = Release|x64
+		{A95852BC-41A7-4E9B-AC63-0CE5E7292132}.Release|x86.ActiveCfg = Release|Win32
+		{A95852BC-41A7-4E9B-AC63-0CE5E7292132}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
